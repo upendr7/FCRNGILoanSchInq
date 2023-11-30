@@ -16,4 +16,12 @@ public class LoanschInqDetails implements Response, Serializable {
     private String responseMessage;
     private List<LoanSchInqRec> loanSchInqRecs;
 
+    @Override
+    public String toString() {
+        return "LoanschInqDetails{" +
+                "responseCode='" + responseCode + '\'' +
+                ", responseMessage='" + responseMessage + '\'' +
+                ", loanSchInqRecs=" + loanSchInqRecs +
+                '}';
+    }
 }

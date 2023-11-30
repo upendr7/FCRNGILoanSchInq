@@ -26,9 +26,9 @@ public class HeaderRequest implements Serializable {
     @Size(max = 40)
     private String svcRqId;
 
-    @NotBlank
     @Size(min = 14, max = 14, message = "TxnDate  size must be 14 characters")
-    @Pattern(regexp = "^\\d*$", message = "txnDate must be numeric. And Format: yyyymmddhhmmss")
+    @Pattern(regexp = "^(19|20|21)\\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][\\d]|3[0-1])([01][\\d]|2[0-3])([0-5][\\d])([0-5][\\d])$", message = "Date format must be yyyyMMddHHmmss")
+    @NotBlank(message = "txnDate Is Mandatory")
     private String txnDate;
 
     private String transactionBranch;

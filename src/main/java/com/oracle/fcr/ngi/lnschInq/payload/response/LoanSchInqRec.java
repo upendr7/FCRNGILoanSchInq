@@ -1,5 +1,9 @@
 package com.oracle.fcr.ngi.lnschInq.payload.response;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +21,7 @@ public class LoanSchInqRec implements Serializable {
 
     private BigDecimal stageNo;
     private Date startDate;
-    private Date repaymentDate;
+    private String repaymentDate;
     private BigDecimal interestRate;
     private BigDecimal Principal;
     private BigDecimal interest;
@@ -29,7 +33,8 @@ public class LoanSchInqRec implements Serializable {
     private BigDecimal outstandingBalance;
     private BigDecimal totalInstallment;
     private BigDecimal days;
-    private Date datePostponeTo ;
+
+    private String datePostponeTo ;
 
     @Override
     public String toString() {
